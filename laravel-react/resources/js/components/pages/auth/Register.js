@@ -40,19 +40,19 @@ class Register extends Component {
         this.setState({
             validated : true
         })
+        
+        const { history } = this.props;
+                    
+        const postBody = {
+            name : this.state.name,
+            email : this.state.email,
+            password : this.state.password,
+            password_confirmation : this.state.password_confirmation
+        }
 
         if (form.checkValidity() !== false) {
 
-            e.preventDefault();
-
-            const { history } = this.props;
-                    
-            const postBody = {
-                name : this.state.name,
-                email : this.state.email,
-                password : this.state.password,
-                password_confirmation : this.state.password_confirmation
-            }
+            e.preventDefault();            
 
             this.setState({ isLoading : true })
 
