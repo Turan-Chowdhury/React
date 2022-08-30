@@ -52,8 +52,9 @@ class Login extends Component {
             e.preventDefault();
             
             this.setState({ isLoading : true });
+            
             const response = await loginUser(postBody);
-            console.log(response);
+            //console.log(response);
 
             if(response.success){
                 this.setState({
